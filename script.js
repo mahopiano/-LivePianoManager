@@ -1,0 +1,1 @@
+console.log("Live Piano Manager v2.0");
