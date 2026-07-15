@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,15 +8,166 @@
 
     <link rel="stylesheet" href="style.css">
 </head>
+
+
 <body>
 
 <div class="container">
-    <h1>🎹 Live Piano Manager <small>v2.0</small></h1>
 
-    <p>土台が完成しました！</p>
+<h1>🎹 Live Piano Manager <small>v2.0</small></h1>
+
+
+<!-- ホーム画面 -->
+<div id="home" class="screen">
+
+    <h2>メニュー</h2>
+
+    <button onclick="showScreen('live')">
+        🔴 ライブ画面
+    </button>
+
+    <button onclick="showScreen('manage')">
+        🎼 曲管理
+    </button>
+
+    <button onclick="showScreen('history')">
+        📊 活動記録
+    </button>
+
 </div>
 
+
+
+<!-- ライブ画面 -->
+<div id="live" class="screen">
+
+    <button onclick="showScreen('home')">
+        ← 戻る
+    </button>
+
+    <h2>🔴 ライブ画面</h2>
+
+
+    <input
+        type="text"
+        id="search"
+        placeholder="曲名・メモを検索">
+
+
+    <select id="genreFilter">
+        <option value="すべて">すべて</option>
+        <option value="J-POP">J-POP</option>
+        <option value="ジブリ">ジブリ</option>
+        <option value="ディズニー">ディズニー</option>
+        <option value="クラシック">クラシック</option>
+        <option value="アニメ">アニメ</option>
+        <option value="洋楽">洋楽</option>
+        <option value="その他">その他</option>
+    </select>
+
+
+    <h2>🎹 今日のおすすめ</h2>
+
+    <div id="recommendArea">
+        読み込み中...
+    </div>
+
+
+    <div id="songList">
+        読み込み中...
+    </div>
+
+
+</div>
+
+
+
+<!-- 曲管理画面 -->
+<div id="manage" class="screen">
+
+    <button onclick="showScreen('home')">
+        ← 戻る
+    </button>
+
+    <h2>🎼 曲管理</h2>
+
+
+    <input
+        type="text"
+        id="newSong"
+        placeholder="曲名">
+
+
+    <select id="newStatus">
+        <option>演奏可能</option>
+        <option>練習中</option>
+        <option>暗譜中</option>
+    </select>
+
+
+    <select id="newGenre">
+        <option>J-POP</option>
+        <option>ジブリ</option>
+        <option>ディズニー</option>
+        <option>クラシック</option>
+        <option>アニメ</option>
+        <option>洋楽</option>
+        <option>その他</option>
+    </select>
+
+
+    <button id="addButton">
+        曲を追加
+    </button>
+
+
+    <button id="sortRequest">
+        リクエスト順
+    </button>
+
+
+    <button id="backupButton">
+        💾 バックアップ保存
+    </button>
+
+
+    <button id="restoreButton">
+        📂 バックアップ復元
+    </button>
+
+
+    <input
+        type="file"
+        id="restoreFile"
+        accept=".json"
+        style="display:none">
+
+
+</div>
+
+
+
+<!-- 活動記録画面 -->
+<div id="history" class="screen">
+
+    <button onclick="showScreen('home')">
+        ← 戻る
+    </button>
+
+    <h2>📊 活動記録</h2>
+
+    <p>
+        ここに演奏履歴やランキングを追加します。
+    </p>
+
+</div>
+
+
+</div>
+
+
 <script src="script.js"></script>
+
 
 </body>
 </html>
